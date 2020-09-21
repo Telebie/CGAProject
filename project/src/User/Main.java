@@ -53,8 +53,8 @@ public class Main {
 		ModelTexture besenTex = new ModelTexture(loader.loadTexture("besen"));
 		ModelTexture schlossTex = new ModelTexture(loader.loadTexture("schloss"));
 		ModelTexture kesselTex = new ModelTexture(loader.loadTexture("kessel"));
-		kesselTex.setShineDumper(50);
-		kesselTex.setReflectivity(50);
+		kesselTex.setShineDumper(100);
+		kesselTex.setReflectivity(100);
 		ModelTexture naturTex = new ModelTexture(loader.loadTexture("natur"));
 		naturTex.setShineDumper(10);
 		naturTex.setReflectivity(1);
@@ -208,7 +208,7 @@ public class Main {
 		
 		Light light = new Light(new Vector3f(50,2000,1000), new Vector3f(1,1,1));
 		Camera camera = new Camera(player);
-		MasterRenderer renderer = new MasterRenderer();
+		MasterRenderer renderer = new MasterRenderer(camera);
 		
 		
 		
@@ -218,6 +218,8 @@ public class Main {
 			
 			camera.move();
 			player.move();
+			
+			//renderer.renderShadowMap(entities, light); 
 			
 			renderer.processEntity(player);
 			
