@@ -1,10 +1,8 @@
-# CGAProject
-
 # Little Mage
 
-# Teammitglieder
+## Teammitglieder
 - Ragna Knes
 - Denisa Kaltak
 
-# Featureliste 
+## Featureliste 
 
