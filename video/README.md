@@ -1,10 +1,5 @@
 # Video
-Erstellen Sie ein max. 3 Minuten langes Video, welches ihr laufendes Projekt vorstellt. 
-Erläutern Sie dabei, welche Features Sie implementiert haben und zeigen Sie diese.
-Das Video darf nur Ihre Anwendung zeigen, sowie Ihre Stimmen beinhalten.
 
-Zur Erstellung können Sie ein beliebiges Programm verwenden, wir können folgende empfehlen:
-- https://obsproject.com/
-- https://www.techsmith.de/camtasia.html
+Das Video ist 3 Minuten lang und dadurch 50MB groß. Die maximale Uploadgröße liegt bei 25MB, weshalb wir das Video per OneDrive teilen.
 
-Bitte speichern Sie das Video als MP4 (H.264).
+https://1drv.ms/v/s!AsmzEJo2QuvAhZAmgWAp_MgbxOzUVw?e=W1YWJ8
