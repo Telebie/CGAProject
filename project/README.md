@@ -1,2 +1,3 @@
 # Projekt
-In diesem Ordner sollen alle Dateien untergebracht werden, die zur Ausführung ihres Projektes notwendig sind (Source Code, Modelle, Assets, etc.)
+
+Es weden weitere Libraries benötigt, die in dem LWJGL release 3.1.2 custom enthalten sind.
