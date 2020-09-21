@@ -14,6 +14,7 @@ import models.Entity;
 import models.TexturedModel;
 import shaders.Shader;
 import shaders.TerrainShader;
+import shadow.ShadowMasterRenderer;
 import terrains.Terrain;
 
 /*** Code für alle Renderer  ***/
@@ -33,17 +34,19 @@ public class MasterRenderer {
 		private TerrainRenderer terrainRenderer;
 		private TerrainShader terrainShader = new TerrainShader(); 
 		
+		private ShadowMasterRenderer shadowRenderer;
+		
 		private Map<TexturedModel,List<Entity>> entities = new HashMap<TexturedModel,List<Entity>>();
 		private List<Terrain> terrains = new ArrayList<Terrain>();
 		
 		
-		public MasterRenderer() {
+		public MasterRenderer(Camera camera) {
 			GL11.glEnable(GL11.GL_CULL_FACE);
 			GL11.glCullFace(GL11.GL_BACK);
 			createProjectionMatrix();			//ProjectionMatrix soll als erstes gerendert werden und durch den Konstruktor wird es immer als erstes geladen und muss nicht nochmal aufgerufen werden 
 			terrainRenderer = new TerrainRenderer(terrainShader, projectionMatrix);
 			renderer = new EntityRenderer(shader, projectionMatrix); 	//Rendern nach Laden der ProjectionMatrix
-			
+			//this.shadowRenderer = new ShadowMasterRenderer(camera); 
 		}
 		
 		
@@ -92,6 +95,19 @@ public class MasterRenderer {
 		}
 		
 		
+		/*** ShadowMapping ***/
+		public int getShadowMaptexture() {
+			return shadowRenderer.getShadowMap();
+		}
+		
+		public void renderShadowMap(List<Entity> entityList, Light light) {
+			for(Entity entity : entityList) {
+				shadowRenderer.render(entities, light);
+				entities.clear();
+			}
+		}
+		
+		
 		
 		
 		
@@ -107,6 +123,7 @@ public class MasterRenderer {
 		public void cleanup() {
 			shader.cleanup();
 			terrainShader.cleanup();
+			shadowRenderer.cleanUp();
 		}
 		
 		
