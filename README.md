@@ -4,5 +4,4 @@
 - Ragna Knes
 - Denisa Kaltak
 
-## Featureliste 
 
